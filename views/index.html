@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: black;
+      }
+      .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      h1 {
+        font-size: 72px;
+        background: -webkit-linear-gradient(
+          rgb(11, 49, 218),
+          rgb(196, 10, 134)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: "Roboto", sans-serif;
+        color: azure;
+      }
+      label {
+        color: white;
+        font-family: "Roboto", sans-serif;
+        color: azure;
+      }
+      .form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      input {
+        margin-top: 10px;
+        width: 325px;
+      }
+      #submit {
+        margin-top: 6px;
+        margin-left: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Youtube Downloader</h1>
+      <div class="form">
+        <form action="http://localhost:3000/download/" method="GET">
+          <label for="video_url">
+            Enter the link of the video you wish to download </label
+          ><br />
+          <input
+            type="text"
+            placeholder="Paste your url here.
+          "
+            name="video_url"
+            id="video_url"
+          /><br />
+          <button id="submit" type="submit">Download</button>
+        </form>
+      </div>
+    </div>
+    <script src="../server/server.js"></script>
+  </body>
+</html>
