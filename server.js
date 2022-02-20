@@ -12,10 +12,9 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "index.html");
 });
 app.get("/download", (req, res) => {
-  var url = req.query.video_url;
+  const url = req.query.video_url;
   console.log(url);
-  console.log(typeof url);
-  ytdl(url).pipe(fs.createWriteStream("./downloads/video.mp4"));
+  ytdl(url).pipe(fs.createWriteStream("video.mp4"));
 });
 
 app.listen("3000", () => {
