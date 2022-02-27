@@ -14,7 +14,10 @@ app.get("/", (req, res) => {
 app.get("/download", (req, res) => {
   const url = req.query.video_url;
   console.log(url);
-  ytdl(url).pipe(fs.createWriteStream("video.mp4"));
+  res.header("Content-Disposition", 'attachment; filename="video.mp4"');
+  ytdl(url, {
+    format: "mp4",
+  }).pipe(res);
 });
 
 app.listen("3000", () => {
