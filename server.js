@@ -8,10 +8,10 @@ const fs = require("fs");
 const app = express();
 app.use(express.static(path.join(__dirname, "/views")));
 
-app.get("/", (req, res) => {
+app.get("https://ytdownloadapp.herokuapp.com//", (req, res) => {
   res.sendFile(__dirname + "index.html");
 });
-app.get("/download", (req, res) => {
+app.get("https://ytdownloadapp.herokuapp.com//download", (req, res) => {
   const url = req.query.video_url;
   console.log(url);
   res.header("Content-Disposition", 'attachment; filename="video.mp4"');
