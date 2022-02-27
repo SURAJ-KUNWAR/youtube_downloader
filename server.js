@@ -23,5 +23,5 @@ app.get("https://ytdownloadapp.herokuapp.com//download", (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log("connected to port 3000");
+  console.log(`Server is running on ${PORT}`);
 });
