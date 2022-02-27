@@ -1,11 +1,13 @@
 const express = require("express");
 const cors = require("cors");
 const ytdl = require("ytdl-core");
+const dotenv = require("dotenv");
 
 const path = require("path");
 const fs = require("fs");
 
 const app = express();
+const PORT = process.env.PORT || 8080;
 app.use(express.static(path.join(__dirname, "/views")));
 
 app.get("https://ytdownloadapp.herokuapp.com//", (req, res) => {
@@ -20,6 +22,6 @@ app.get("https://ytdownloadapp.herokuapp.com//download", (req, res) => {
   }).pipe(res);
 });
 
-app.listen("3000", () => {
+app.listen(PORT, () => {
   console.log("connected to port 3000");
 });
